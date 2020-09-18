@@ -1,0 +1,150 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body .body {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 80px 1fr 595px 1fr;
+      grid-template-columns: 80px 1fr 595px 1fr;
+  -ms-grid-rows: (60px)[2] 1fr 340px 1fr;
+      grid-template-rows: repeat(2, 60px) 1fr 340px 1fr;
+}
+
+body .body .flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .body .header {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-area: 1 / 1 / 2 / 6;
+  background: #3a86ff;
+  padding: 0 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .body .header .home-btn, body .body .header .download-btn {
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.6rem 1rem 0.6rem 0.5rem;
+  border-radius: 4px;
+}
+
+body .body .header .home-btn:hover, body .body .header .download-btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+body .body .header .cardname {
+  color: white;
+  font-size: 18px;
+}
+
+body .body .header .download-btn {
+  color: #3a86ff;
+  background: white;
+  padding: 0.6rem 1.4rem;
+  border-radius: 4px;
+}
+
+body .body .header .download-btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+body .body .sidebar {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 6 / 2;
+  background: #404040;
+  color: white;
+  font-size: 12px;
+  padding: 2rem 0 0;
+}
+
+body .body .sidebar .sidebar-btns {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: (1fr)[4];
+      grid-template-rows: repeat(4, 1fr);
+  row-gap: 2rem;
+}
+
+body .body .sidebar .sidebar-btns .sidebar-btn {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  padding: 0.5rem 0;
+}
+
+body .body .sidebar .sidebar-btns .sidebar-btn:hover {
+  cursor: pointer;
+}
+
+body .body .sidebar .sidebar-btns .sidebar-btn:hover path, body .body .sidebar .sidebar-btns .sidebar-btn:hover span {
+  fill: #3a86ff;
+  color: #3a86ff;
+}
+
+body .body .sidebar .sidebar-btns .sidebar-btn .sidebar-btn-label {
+  margin-top: 0.5rem;
+}
+
+body .body .property-bar {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 4;
+  grid-area: 2 / 2 / 3 / 6;
+  background: white;
+  z-index: 1;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+body .body .workarea {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 3;
+  grid-area: 3 / 2 / 6 / 5;
+  background: #ebebeb;
+}
+
+body .body .canvas {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 4 / 3 / 5 / 4;
+  background: white;
+  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+/*# sourceMappingURL=style.css.map */

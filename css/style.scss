@@ -1,0 +1,123 @@
+// ############ Variables ############
+$header-bg: rgb(58, 134, 255);
+$sidebar-bg: rgb(64, 64, 64);
+$property-bar-bg: rgb(255, 255, 255);
+$workarea-bg: rgb(235, 235, 235);
+$canvas-bg: rgb(255, 255, 255);
+// ###### Buttons ###### 
+// Header
+$header-btn-bg: rgb(255, 255, 255);
+$header-btn-font-color: rgb(58, 134, 255);
+$header-font-color: rgb(255, 255, 255);
+// Sidebar
+$sidebar-font-color: rgb(255, 255, 255);
+$sidebar-hover-font-color: rgb(58, 134, 255);
+// Font Family
+$primary-font: 'Roboto', sans-serif;
+// ############ Variables ############
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+body {
+    .body {
+        font-family: $primary-font;
+        text-align: center;
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 80px 1fr 595px 1fr;
+        grid-template-rows: repeat(2, 60px) 1fr 340px 1fr;
+
+        .flex-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header { 
+            grid-area: 1 / 1 / 2 / 6;
+            background: $header-bg;
+            padding: 0 1rem;
+            justify-content: space-between;
+
+            .home-btn, .download-btn {
+                color: $header-font-color;
+                width: fit-content;
+                padding: 0.6rem 1rem 0.6rem 0.5rem;
+                border-radius: 4px;
+
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                }
+            }
+
+            .cardname {
+                color: $header-font-color;
+                font-size: 18px;
+            }
+
+            .download-btn {
+                color: $header-btn-font-color;
+                background: $header-btn-bg;
+                padding: 0.6rem 1.4rem;
+                border-radius: 4px;
+
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+        .sidebar { 
+            grid-area: 2 / 1 / 6 / 2;
+            background: $sidebar-bg;
+            color: $sidebar-font-color;
+            font-size: 12px;
+            padding: 2rem 0 0;
+
+            .sidebar-btns {
+                display: grid;
+                grid-template-rows: repeat(4, 1fr);
+                row-gap: 2rem;
+
+                .sidebar-btn {
+                    flex-flow: column nowrap;
+                    padding: 0.5rem 0;
+
+                    &:hover {
+                        cursor: pointer;
+
+                        path, span {
+                            fill: $sidebar-hover-font-color;
+                            color: $sidebar-hover-font-color;
+                        }
+                    }
+
+                    .sidebar-btn-label {
+                        margin-top: 0.5rem;
+                    }
+                }
+            }
+        }
+        .property-bar { 
+            grid-area: 2 / 2 / 3 / 6;
+            background: $property-bar-bg;
+            z-index: 1;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+        .workarea {
+            grid-area: 3 / 2 / 6 / 5;
+            background: $workarea-bg;
+        }
+        .canvas { 
+            grid-area: 4 / 3 / 5 / 4;
+            background: $canvas-bg;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+    }
+}

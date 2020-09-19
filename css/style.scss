@@ -1,7 +1,7 @@
 // ############ Variables ############
 $header-bg: rgb(255, 183, 3);
-$sidebar-bg: rgb(49, 49, 49);
-$sidebar-extended-bg: rgb(64, 64, 64);
+$sidebar-bg: rgb(0, 0, 0);
+$extended-sidebar-bg: rgb(64, 64, 64);
 $property-bar-bg: rgb(255, 255, 255);
 $workarea-bg: rgb(235, 235, 235);
 $canvas-bg: rgb(255, 255, 255);
@@ -32,7 +32,7 @@ body {
         display: grid;
         grid-template-columns: 80px 1fr 595px 1fr;
         grid-template-rows: repeat(2, 60px) 1fr 340px 1fr;
-        
+
         .flex-center {
             display: flex;
             justify-content: center;
@@ -47,10 +47,15 @@ body {
             justify-content: space-between;
 
             .home-btn, .download-btn {
-                color: $header-font-color;
+                color: $header-btn-font-color;
+                background: $header-btn-bg;
                 width: fit-content;
                 padding: 0.6rem 1rem 0.6rem 0.5rem;
                 border-radius: 4px;
+                
+                path {
+                    stroke: $header-btn-font-color;                    
+                }
 
                 &:hover {
                     cursor: pointer;
@@ -64,10 +69,10 @@ body {
             }
 
             .download-btn {
-                color: $header-btn-font-color;
-                background: $header-btn-bg;
+                // color: $header-btn-font-color;
+                // background: $header-btn-bg;
                 padding: 0.6rem 1.4rem;
-                border-radius: 4px;
+                // border-radius: 4px;
 
                 &:hover {
                     cursor: pointer;
@@ -89,6 +94,16 @@ body {
                 grid-template-rows: repeat(4, 1fr);
                 row-gap: 2rem;
 
+                // .primary-color {
+                //     fill: $sidebar-hover-font-color;
+                //     color: $sidebar-hover-font-color;
+                // }
+        
+                // .secondary-color {
+                //     fill: $sidebar-font-color;
+                //     color: $sidebar-font-color;
+                // }
+
                 .sidebar-btn {
                     flex-flow: column nowrap;
                     padding: 0.5rem 0;
@@ -107,11 +122,11 @@ body {
                     }
                 }
             }
-        }
+        }   
 
-        .sidebar-extended {
+        .extended-sidebar {
             grid-area: 2 / 2 / 6 / 3;
-            background: $sidebar-extended-bg;
+            background: $extended-sidebar-bg;
             z-index: 2;
             width: 360px;
         }

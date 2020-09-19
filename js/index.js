@@ -1,33 +1,49 @@
+// Closing 3 extended sidebars and opening/closing 1.
+let extendedSidebars = document.getElementsByClassName("extended-sidebar");
+function togglingCurrentExtSidebar(currentExtSidebar) {
+    for (let numOfExtendedSidebar=0; numOfExtendedSidebar<4; numOfExtendedSidebar++) {
+        let sidebarBtnPath = document.getElementsByClassName("sidebar-btn")[numOfExtendedSidebar].childNodes[1].childNodes[1];
+        let sidebarBtnLabel = document.getElementsByClassName("sidebar-btn-label");
+
+        // Changing styles according to need.
+        if (numOfExtendedSidebar === currentExtSidebar) {
+            extendedSidebars[numOfExtendedSidebar].classList.toggle("hide-element");
+            sidebarBtnPath.style.fill = "rgb(255, 183, 3)";
+            sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 183, 3)";
+        } else {
+            extendedSidebars[numOfExtendedSidebar].classList.add("hide-element");
+            sidebarBtnPath.style.fill = "rgb(255, 255, 255)";
+            sidebarBtnLabel[numOfExtendedSidebar].style.color = "rgb(255, 255, 255)";
+        }
+    }
+}
+
 // Template button and it's extended sidebar
 const templateBtn = document.getElementById("templateBtn");
-const templateSidebarExt = document.getElementById("templateSidebarExt");
 
 templateBtn.addEventListener("click", function () { 
-    templateSidebarExt.classList.toggle("hide-element");
+    togglingCurrentExtSidebar(0);
 });
 
 // Uplaod button and it's extended sidebar
 const uploadBtn = document.getElementById("uploadBtn");
-const uploadSidebarExt = document.getElementById("uploadSidebarExt");
 
 uploadBtn.addEventListener("click", function () { 
-    uploadSidebarExt.classList.toggle("hide-element");
+    togglingCurrentExtSidebar(1);
 });
 
 // Elements button and it's extended sidebar
 const elementsBtn = document.getElementById("elementsBtn");
-const elementSidebarExt = document.getElementById("elementSidebarExt");
 
-elementsBtn.addEventListener("click", function () { 
-    elementSidebarExt.classList.toggle("hide-element");
+elementsBtn.addEventListener("click", function () {
+    togglingCurrentExtSidebar(2);
 });
 
 // Text button and it's extended sidebar
 const textBtn = document.getElementById("textBtn");
-const textSidebarExt = document.getElementById("textSidebarExt");
 
 textBtn.addEventListener("click", function () { 
-    textSidebarExt.classList.toggle("hide-element");
+    togglingCurrentExtSidebar(3);
 });
 
 

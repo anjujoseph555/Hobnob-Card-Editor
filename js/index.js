@@ -29,3 +29,12 @@ const textSidebarExt = document.getElementById("textSidebarExt");
 textBtn.addEventListener("click", function () { 
     textSidebarExt.classList.toggle("hide-element");
 });
+
+
+// Canvas
+const canvas = new fabric.Canvas('canvas', {
+    width: 595,
+    height: 340,
+});
+
+canvas.renderAll();

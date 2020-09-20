@@ -94,16 +94,6 @@ body {
                 grid-template-rows: repeat(4, 1fr);
                 row-gap: 2rem;
 
-                // .primary-color {
-                //     fill: $sidebar-hover-font-color;
-                //     color: $sidebar-hover-font-color;
-                // }
-        
-                // .secondary-color {
-                //     fill: $sidebar-font-color;
-                //     color: $sidebar-font-color;
-                // }
-
                 .sidebar-btn {
                     flex-flow: column nowrap;
                     padding: 0.5rem 0;
@@ -125,10 +115,31 @@ body {
         }   
 
         .extended-sidebar {
-            grid-area: 2 / 2 / 6 / 3;
+            grid-area: 2 / 2 / 6 / 4;
             background: $extended-sidebar-bg;
             z-index: 2;
             width: 360px;
+        }
+
+        .element-sidebar-ext {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 172px);
+            column-gap: 1rem;
+            row-gap: 1rem;
+            padding: 1rem;
+
+            .add-element-btn {
+                color: $sidebar-font-color;
+                border-radius: 10px;
+                border: 1px solid $sidebar-font-color;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $sidebar-hover-font-color;
+                    border: 1px solid $sidebar-hover-font-color;
+                }
+            }
         }
 
         .property-bar { 
@@ -136,6 +147,18 @@ body {
             background: $property-bar-bg;
             z-index: 1;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            padding: 0 1rem;
+            justify-content: space-between;
+
+            .delete-btn {
+                padding: 8px;
+                border-radius: 4px;
+                
+                &:hover {
+                    cursor: pointer;
+                    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+                }
+            }
         }
         .workarea {
             grid-area: 3 / 2 / 6 / 5;

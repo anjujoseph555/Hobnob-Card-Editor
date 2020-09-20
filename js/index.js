@@ -53,4 +53,39 @@ const canvas = new fabric.Canvas('canvas', {
     height: 340,
 });
 
+fabric.Object.prototype.transparentCorners = false;
+fabric.Object.prototype.cornerColor = 'blue';
+fabric.Object.prototype.cornerStyle = 'circle';
+
+// Deleting an object/element from the canvas
+function deleteObject() {
+    canvas.getActiveObjects().forEach((obj) => {
+        canvas.remove(obj)
+    });
+    canvas.discardActiveObject().renderAll()
+}
+
+// Adding Rectangle to the canvas
+function addRectangle() {
+    var rect = new fabric.Rect({
+      left: 100,
+      top: 100,
+      fill: 'yellow',
+      width: 200,
+      height: 100,
+      objectCaching: false,
+      stroke: 'blue',
+      strokeWidth: 0
+    });
+
+    canvas.add(rect);
+    canvas.setActiveObject(rect);
+}
+
+const addRectBtn = document.getElementById("addRectBtn");
+
+addRectBtn.addEventListener("click", function () {
+   addRectangle(); 
+});
+
 canvas.renderAll();

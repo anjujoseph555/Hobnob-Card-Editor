@@ -128,11 +128,36 @@ body .body .extended-sidebar {
   -ms-grid-row: 2;
   -ms-grid-row-span: 4;
   -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 2 / 2 / 6 / 3;
+  -ms-grid-column-span: 2;
+  grid-area: 2 / 2 / 6 / 4;
   background: #404040;
   z-index: 2;
   width: 360px;
+}
+
+body .body .element-sidebar-ext {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-rows: (172px)[2];
+      grid-template-rows: repeat(2, 172px);
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  row-gap: 1rem;
+  padding: 1rem;
+}
+
+body .body .element-sidebar-ext .add-element-btn {
+  color: white;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+body .body .element-sidebar-ext .add-element-btn:hover {
+  cursor: pointer;
+  color: #ffb703;
+  border: 1px solid #ffb703;
 }
 
 body .body .property-bar {
@@ -145,6 +170,21 @@ body .body .property-bar {
   z-index: 1;
   -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+  padding: 0 1rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+body .body .property-bar .delete-btn {
+  padding: 8px;
+  border-radius: 4px;
+}
+
+body .body .property-bar .delete-btn:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 body .body .workarea {
